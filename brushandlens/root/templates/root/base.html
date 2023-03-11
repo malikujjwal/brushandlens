@@ -28,10 +28,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link {% if active == 'Gallery' %} active{% endif %}" href="/gallery">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link {% if active == 'Lucky' %} active{% endif %}" href="/gallery">Feeling Luck!</a></li>
-                        <li class="nav-item"><a class="nav-link {% if active == 'About' %}active{% endif %}" href="{% if active == 'About' %}#about{% else %}/about{% endif %}">About</a></li>
-                        <li class="nav-item"><a class="nav-link {% if active == 'Signup' %} active{% endif %}" href="/signup">Signup/Login</a></li>
+                        <li class="nav-item"><a class="nav-link {% if active == 'Gallery' %} active{% endif %}" href="{% url 'about' %}">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link {% if active == 'Lucky' %} active{% endif %}" href="{% url 'about' %}">Feeling Lucky!</a></li>
+                        <li class="nav-item"><a class="nav-link {% if active == 'About' %}active{% endif %}" href="{% url 'about' %}">About</a></li> <!--remove this>-->
+                        <li class="nav-item"><a class="nav-link {% if active == 'Signup' %} active{% endif %}" href="{% url 'about' %}">Signup/Login</a></li>
                     </ul>
                 </div>
             </div>

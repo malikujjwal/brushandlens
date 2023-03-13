@@ -1,0 +1,43 @@
+{% extends "root/base.html" %}
+
+{% block header %}
+<script src="../static/root/js/galleryview.js"></script>
+{% endblock %}
+
+
+{% block content %}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">STUDIO</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Buy digital Downloads Or Prints</p>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="text-center">
+        <a id ="artist_button" class="btn btn-primary">Artist</a>
+        <a id ="theme_button" class="btn btn-primary">Theme</a>
+        <div class="dropdown">  
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Sort By
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Date Posted</a></li>
+              <li><a class="dropdown-item" href="#">Trending</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="py-5">
+    <div id ="cards" class="container px-4 px-lg-5 mt-5">
+    </div>
+</section>
+<script>
+    $(() => {
+        const galleryViewer = new GalleryViewer(3, 6);
+        galleryViewer.load();
+    });
+</script>
+
+{% endblock content %}

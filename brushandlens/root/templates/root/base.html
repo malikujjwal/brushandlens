@@ -16,7 +16,8 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'root/css/styles.css' %}" rel="stylesheet" />
         <script src="/static/root/lib/jquery/jquery.min.js"></script>
-        
+        <script src="/static/root/js/account-view.js"></script>
+
         {% block header %}{% endblock %}
     </head>
 
@@ -34,11 +35,29 @@
                         <li class="nav-item"><a class="nav-link {% if active == 'Gallery' %} active{% endif %}" href="{% url 'gallery' %}">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link {% if active == 'Lucky' %} active{% endif %}" href="{% url 'about' %}">Feeling Lucky!</a></li>
                         <li class="nav-item"><a class="nav-link {% if active == 'About' %}active{% endif %}" href="{% url 'about' %}">About</a></li> <!--remove this>-->
-                        <li class="nav-item"><a class="nav-link {% if active == 'Signup' %} active{% endif %}" href="{% url 'about' %}">Signup/Login</a></li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+{#                                shadow-none  btn-white  #}
+                                <button class="shadow-none border-start-0 border-end-0 border-top-0 btn-white nav-item nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Account
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                                    {% if not user.is_authenticated %}
+                                        <li><a class="dropdown-item" href="{% url 'accounts:log_in' %}">Log in</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'accounts:sign_up' %}">Sign up</a></li>
+                                    {% endif %}
+                                    {% if user.is_authenticated %}
+                                        <li><a class="dropdown-item" href="{% url 'accounts:log_out' %}">Sign out</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'accounts:change_password' %}">Password</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'accounts:change_profile' %}">Profile</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </nav> 
+        </nav>
         {% block content %}{% endblock content %}
 
         <!-- Footer-->

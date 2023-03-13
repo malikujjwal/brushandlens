@@ -1,0 +1,31 @@
+{% extends 'root/base.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+    <header class="py-5 d-flex">
+        <div class="container px-4 px-lg-5 my-5">
+            <div>
+                <h1 class="display-4 fw-bolder">Logged out</h1>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container py-5 h-100">
+            <div class="row d-flex align-items-center justify-content-center h-100">
+                <div class="col-md-8 col-lg-7 col-xl-6">
+                </div>
+                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                    <p>
+                        Thanks for spending some quality time with the site today.
+                    </p>
+                    <p>
+                        <a href="{% url 'accounts:log_in' %}">Log in again</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,12 +1,4 @@
-$('#artist_button').on("click", function () {
-    console.log('sadas');
-});
-
-$('#theme_button').on("click", function () {
-    console.log('2eqwdwf');
-});
-
-function GalleryViewer(numRows, goatsPerRow) {
+function ArtistViewer(numRows, goatsPerRow) {
     const GOATS_PER_PAGE = numRows * goatsPerRow;
 
     this.updateCards = (goats) => {

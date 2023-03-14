@@ -1,0 +1,107 @@
+{% extends "root/base.html" %}
+
+
+{% block header %}
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/root/artistworks-assets/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/root/artistworks-assets/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+{% endblock %}
+{% block content %}
+<section>
+  <main id="main">
+
+    <!-- ======= Works Section ======= -->
+    <section class="section site-portfolio">
+      <div class="container">
+        <div class="row mb-5 align-items-center">
+          <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
+            <h2>Hey, I'm Johan Stanworth</h2>
+            <p class="mb-0">Freelance Creative &amp; Professional Graphics Designer</p>
+          </div>
+          <div class="col-md-12 col-lg-6 text-start text-lg-end" data-aos="fade-up" data-aos-delay="100">
+            <div id="filters" class="filters">
+              <a href="#" data-filter="*" class="active">All</a>
+              <a href="#" data-filter=".web">Web</a>
+              <a href="#" data-filter=".design">Design</a>
+              <a href="#" data-filter=".branding">Branding</a>
+              <a href="#" data-filter=".photography">Photography</a>
+            </div>
+          </div>
+        </div>
+        <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+          <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="work-single.html" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Boxed Water</h3>
+                <span>Web</span>
+              </div>
+              <img class="img-fluid" src="../static/root/images/bg-masthead.jpg">
+            </a>
+          </div>
+          <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="work-single.html" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Build Indoo</h3>
+                <span>Photography</span>
+              </div>
+              <img class="img-fluid" src="../static/root/artistworks-assets/assets/img/img_2.jpg">
+            </a>
+          </div>
+          <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="work-single.html" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Cocooil</h3>
+                <span>Branding</span>
+              </div>
+              <img class="img-fluid" src="../static/root/artistworks-assets/assets/img/img_3.jpg">
+            </a>
+          </div>
+          <div class="item design col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="work-single.html" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Nike Shoe</h3>
+                <span>Design</span>
+              </div>
+              <img class="img-fluid" src="../static/root/artistworks-assets/assets/img/img_4.jpg">
+            </a>
+          </div>
+          <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="work-single.html" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Kitchen Sink</h3>
+                <span>Photography</span>
+              </div>
+              <img class="img-fluid" src="../static/root/artistworks-assets/assets/img/img_5.jpg">
+            </a>
+          </div>
+          <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="work-single.html" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Amazon</h3>
+                <span>brandingn</span>
+              </div>
+              <img class="img-fluid" src="../static/root/artistworks-assets/assets/img/img_6.jpg">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section><!-- End  Works Section -->
+
+  </main><!-- End #main -->
+  <!-- Vendor JS Files -->
+  <script src="../static/root/artistworks-assets/assets/vendor/aos/aos.js"></script>
+  <script src="../static/root/artistworks-assets/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/root/artistworks-assets/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/root/artistworks-assets/assets/js/main.js">
+  </script>
+
+</section>
+{% endblock content %}

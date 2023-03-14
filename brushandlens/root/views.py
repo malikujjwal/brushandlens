@@ -13,6 +13,9 @@ def gallery(request):
     context = {'active': 'Gallery'}
     return render(request, 'root/gallery.html', context)
 
+def artistworks(request):
+    context = {'active': 'Artist'}
+    return render(request, 'root/artistworks.html', context)
 def get_artists(request):
     return JsonResponse( {
         'goats' :[{

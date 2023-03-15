@@ -1,0 +1,419 @@
+/* .slider-img-max {
+  max-width: 500px !important; 
+  width:100%;
+} */
+
+body{
+  background-color: #F5F6F8;
+}
+
+.slide-container{
+  border: 1px solid rgb(183, 183, 183);
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 2rem;
+  background-color: #FFFFFF;
+  border: 1px solid #e5e7eb;
+}
+
+.slider-border{
+  border-left: 1px solid #e5e7eb;
+}
+
+.carousel-frame{
+  background-color: black;
+  padding: 1rem;
+}
+
+.carousel-border-wframe{
+  outline: 1rem solid white;
+  outline-offset: -2rem;
+}
+
+.carousel-border{
+  outline: 1rem solid white;
+  outline-offset: -1rem;
+  box-shadow: 0 3px 7px #9d9d9d3d;
+}
+
+.div-empty-height {
+  height: 3.7rem;
+}
+
+.slider-caption {
+  position: absolute;
+  /* right: 15%; */
+  bottom: 1.25rem;
+  left: 4%;
+  padding-top: 1.25rem;
+  padding-bottom: 1rem;
+  color: #fff;
+  text-align: left;
+}
+
+.back-button{ 
+  border: 0px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.back-button button{
+  border: 0px;  
+  background: transparent;
+} 
+
+.form .button, .form .message, .customSelect, .form .select, .form .textarea, .form .text-input, .form .option-input + label, .form .checkbox-input + label, .form .label {
+  padding: 0.75em 1em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  line-height: normal;
+  border-radius: 0;
+  border: none;
+  background: none;
+  display: block;
+}
+
+.form{
+  font-weight: bold;
+  color: white;
+  padding-top: 0;
+  padding-left: 0;
+  letter-spacing: 0.025em;
+  font-size: 0.9em;
+  line-height: 1.25;
+  position: relative;
+  z-index: 100;
+}
+.label {
+  color: black;
+  padding-top: 0;
+  padding-left: 0;
+  letter-spacing: 0.025em;
+  font-size: 0.9em;
+  line-height: 1.25;
+  position: relative;
+  z-index: 100;
+}
+.required .form .label:after, .form .required .label:after {
+  content: " *";
+  color: #E8474C;
+  font-weight: normal;
+  font-size: 0.9em;
+  vertical-align: top;
+}
+
+.customSelect, .form .select, .form .textarea, .form .text-input, .form .option-input + label, .form .checkbox-input + label {
+  font: inherit;
+  line-height: normal;
+  width: 100%;
+  box-sizing: border-box;
+  background: #222222;
+  border-radius: 5%;
+  color: white;
+  position: relative;
+}
+.customSelect:placeholder, .form .select:placeholder, .form .textarea:placeholder, .form .text-input:placeholder, .form .option-input + label:placeholder, .form .checkbox-input + label:placeholder {
+  color: white;
+}
+.customSelect:-webkit-autofill, .form .select:-webkit-autofill, .form .textarea:-webkit-autofill, .form .text-input:-webkit-autofill, .form .option-input + label:-webkit-autofill, .form .checkbox-input + label:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #111111 inset;
+  -webkit-text-fill-color: white;
+  border-top-color: #111111;
+  border-left-color: #111111;
+  border-right-color: #111111;
+}
+.customSelect:not(:focus):not(:active).error, .form .select:not(:focus):not(:active).error, .form .textarea:not(:focus):not(:active).error, .form .text-input:not(:focus):not(:active).error, .form .option-input + label:not(:focus):not(:active).error, .form .checkbox-input + label:not(:focus):not(:active).error, .error .customSelect:not(:focus):not(:active), .error .form .select:not(:focus):not(:active), .form .error .select:not(:focus):not(:active), .error .form .textarea:not(:focus):not(:active), .form .error .textarea:not(:focus):not(:active), .error .form .text-input:not(:focus):not(:active), .form .error .text-input:not(:focus):not(:active), .error .form .option-input + label:not(:focus):not(:active), .form .error .option-input + label:not(:focus):not(:active), .error .form .checkbox-input + label:not(:focus):not(:active), .form .error .checkbox-input + label:not(:focus):not(:active) {
+  background-size: 8px 8px;
+  background-image: linear-gradient(135deg, rgba(232, 71, 76, 0.5), rgba(232, 71, 76, 0.5) 25%, transparent 25%, transparent 50%, rgba(232, 71, 76, 0.5) 50%, rgba(232, 71, 76, 0.5) 75%, transparent 75%, transparent);
+  background-repeat: repeat;
+}
+.form:not(.has-magic-focus) .customSelect.customSelectFocus, .form:not(.has-magic-focus) .customSelect:active, .form:not(.has-magic-focus) .select:active, .form:not(.has-magic-focus) .textarea:active, .form:not(.has-magic-focus) .text-input:active, .form:not(.has-magic-focus) .option-input + label:active, .form:not(.has-magic-focus) .checkbox-input + label:active, .form:not(.has-magic-focus) .customSelect:focus, .form:not(.has-magic-focus) .select:focus, .form:not(.has-magic-focus) .textarea:focus, .form:not(.has-magic-focus) .text-input:focus, .form:not(.has-magic-focus) .option-input + label:focus, .form:not(.has-magic-focus) .checkbox-input + label:focus {
+  background: #4E4E4E;
+}
+
+.form .message {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  font-size: 0.625em;
+  color: white;
+}
+
+.form .option-input, .form .checkbox-input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.form .option-input + label, .form .checkbox-input + label {
+  display: inline-block;
+  width: auto;
+  color: #817f7f;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.form .option-input:focus + label, .form .checkbox-input:focus + label, .form .option-input:active + label, .form .checkbox-input:active + label {
+  color: #4E4E4E;
+}
+.form .option-input:checked + label, .form .checkbox-input:checked + label {
+  color: white;
+}
+
+.form .button {
+  font: inherit;
+  line-height: normal;
+  cursor: pointer;
+  background: #558985;
+  border-radius: 2%;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  margin-left: auto;
+  font-weight: bold;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.form .button:hover, .form .button:focus, .form .button:active {
+  color: white;
+  border-color: white;
+}
+.form .button:active {
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
+
+body {
+  padding: 2em;
+}
+
+.form {
+  max-width: 40em;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.form .field {
+  width: 100%;
+  margin: 0 0 1.5em 0;
+}
+@media screen and (min-width: 40em) {
+  .form .field.half {
+    width: calc(50% - 1px);
+  }
+}
+.form .field.last {
+  margin-left: auto;
+}
+.form .textarea {
+  max-width: 100%;
+}
+.form .select {
+  text-indent: 0.01px;
+  text-overflow: "" !important;
+}
+.form .select::-ms-expand {
+  display: none;
+}
+.form .checkboxes, .form .options {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  overflow: hidden;
+}
+.form .checkbox, .form .option {
+  float: left;
+  margin: 1px;
+}
+.customSelect {
+  pointer-events: none;
+}
+.customSelect:after {
+  content: "";
+  pointer-events: none;
+  width: 0.5em;
+  height: 0.5em;
+  border-style: solid;
+  border-color: white;
+  border-width: 0 3px 3px 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.625em;
+  right: 1em;
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+}
+.customSelect.customSelectFocus:after {
+  border-color: white;
+}
+.magic-focus {
+  position: absolute;
+  z-index: 0;
+  width: 0;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.15);
+  transition: top 0.2s, left 0.2s, width 0.2s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: top, left, width;
+  transform-origin: 0 0;
+}
+
+.accordion{
+  color: black !important;
+  font-style: normal !important;
+  margin-left: -0.8rem;
+  margin-right: -2.1rem;
+  padding-left: 0;
+  border-left: 0;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+}
+
+.accordion-button{
+  font-size: 0.85rem !important;
+  border-left: 0;
+  border-right:0 !important;
+  border-bottom: 0;
+}
+.accordion .card-header:after {  
+  content: "\f068" !important;
+  float: right; 
+}
+.accordion .card-header.collapsed:after {
+  /* symbol for "collapsed" panels */
+  content: "\f067"; 
+}
+
+/* like button */
+.large-font{
+  font-size:x-large;
+}
+ion-icon.active{
+  animation:like 0.5s 1;
+  fill:red;
+  stroke:none;
+}
+ion-icon{
+  fill:transparent;
+  stroke:black;
+  stroke-width:30;
+  transition:all 0.5s;
+}
+
+
+@-webkit-keyframes like {
+  0%   { transform: scale(1); }
+  90%   { transform: scale(1.2); }
+  100% { transform: scale(1.1); }
+}
+
+/* share button */
+.share,
+.share:before,
+.share:after,
+.ico {
+  /* float: left; */
+  height: 26px;
+  width: 26px;
+  /* border-radius: 50%; */
+  /* position: absolute; */
+  cursor: pointer;
+}
+
+.share {
+  position: relative;
+}
+.share:before, .share:after {
+  content: "";
+  will-change: transform;
+}
+.share:before {
+  background: url(https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../releases/preview/2012/png/iconmonstr-plus-6.png&r=0&g=0&b=0) center/15px no-repeat;
+  z-index: 5;
+  transition: 0.3s;
+}
+.share:after {
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  transition: 0.39s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.share.active:before {
+  transform: rotate(45deg);
+}
+.share.active:after {
+  width: 30px;
+  height: 30px;
+}
+
+.ico {
+  display: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  animation: 0.3s left forwards;
+  opacity: 0;
+  will-change: animation;
+}
+.ico:nth-child(1) {
+  background: #1da1f2 url("https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../releases/preview/2012/png/iconmonstr-twitter-5.png&r=255&g=255&b=255") center/30px no-repeat;
+  right: -132px;
+}
+.ico:nth-child(2) {
+  background: #46629e url("https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../releases/preview/2012/png/iconmonstr-facebook-5.png&r=255&g=255&b=255") center/30px no-repeat;
+  right: -66px;
+}
+.ico:nth-child(3) {
+  background: #2867b2 url("https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../releases/preview/2012/png/iconmonstr-linkedin-5.png&r=255&g=255&b=255") center/30px no-repeat;
+}
+.ico.active {
+  display: block;
+  animation: 0.48s right forwards;
+}
+.ico.active:nth-child(1) {
+  animation-delay: 0.39s;
+}
+.ico.active:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+@keyframes right {
+  50% {
+    transform: translateX(170%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(130%);
+  }
+}
+@keyframes left {
+  0% {
+    opacity: 1;
+    transform: translateX(130%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+    top: 0;
+  }
+}

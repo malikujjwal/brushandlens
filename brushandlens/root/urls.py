@@ -20,6 +20,8 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
+    path('preview/', views.preview, name="preview"),
+    path('feelinglucky/', views.feelinglucky, name="feelinglucky"),
     path('gallery/', views.gallery, name='gallery'),
     path('artistworks/', views.artistworks, name='artistworks'),
     path('api/get_artists', views.get_artists, name='get_artists'),

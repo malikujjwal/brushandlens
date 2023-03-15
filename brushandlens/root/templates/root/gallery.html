@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="en">
+
+{% extends "root/base.html" %}
+{% block header %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../static/root/gallery-assets/css/style.css">
+</head>
+
+{% endblock %}
+
+{% block content %}
+    <div class="body_wrapper">        
+        <section class="breadcrumb_area_two breadcrumb_area_three parallaxie" data-background="img/bg.jpg" style="background: url(../static/root/gallery-assets/img/case_one/cases_banner.jpg) no-repeat;">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="breadcrumb_content">
+                    <h1>STUDIO</h1>
+                    <p>Download and Buy Prints</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio_area sec_pad">                
+            <ul class="list-unstyled gallery_filter gallery_filter_two">
+                    <li class="active" data-filter="*">All Projects</li>
+                    <li data-filter=".design">Design</li>
+                    <li data-filter=".market">Marketing</li>
+                    <li data-filter=".develop">Development</li>
+                    <li data-filter=".br">Branding</li>
+                </ul>
+            <div id="cards" class="container">
+
+                <div class="row gallery_inner_four" id="gallery">
+                    <div class="col-lg-4 col-md-6 gallery_item design">
+                        <div class="gallery_post">
+                            <div class="img"><img src="../static/root/gallery-assets/img/case_one/case_pr_one.jpg" alt></div>
+                            <div class="gallery_content">
+                                <a href="#">
+                                    <h3>Artboard Focus</h3>
+                                </a>
+                                <a href="#" class="g_tag">Design</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="../static/root/js/galleryview.js"></script>
+    <script>
+
+        $(() => {
+            const goatViewer = new GalleryViewer(1, 6);
+            goatViewer.load();
+        });
+    </script>
+    <script src="../static/root/gallery-assets/js/parallaxie.js"></script>
+    <script src="../static/root/gallery-assets/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="../static/root/gallery-assets/vendors/isotope/isotope-min.js"></script>
+    <script src="../static/root/gallery-assets/js/custom.js"></script>
+
+{% endblock content %}

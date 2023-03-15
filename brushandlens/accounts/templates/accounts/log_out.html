@@ -4,28 +4,25 @@
 {% load i18n %}
 
 {% block content %}
-    <header class="py-5 d-flex">
-        <div class="container px-4 px-lg-5 my-5">
-            <div>
-                <h1 class="display-4 fw-bolder">Logged out</h1>
+    <div class="content-wrapper d-flex flex-column flex-grow-1">
+        <section>
+            <div class="py-5 d-flex">
             </div>
-        </div>
-    </header>
-    <section>
-        <div class="container py-5 h-100">
-            <div class="row d-flex align-items-center justify-content-center h-100">
-                <div class="col-md-8 col-lg-7 col-xl-6">
-                </div>
-                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                    <p>
-                        Thanks for spending some quality time with the site today.
-                    </p>
-                    <p>
-                        <a href="{% url 'accounts:log_in' %}">Log in again</a>
-                    </p>
-
+            <div class="container d-flex justify-content-center">
+                <div class="col-xl-5">
+                    <form class="form-outline mb-4 py-3 form-control form-control-lg" method="post">
+                        <div class="divider d-flex align-items-center my-1">
+                            <p class="text-center fw-bold mx-3 mb-0 text-muted">LOGGED OUT</p>
+                        </div>
+                        <p>
+                            Thanks for spending some quality time with the site today.
+                        </p>
+                        <div class="d-grid gap-2 col-6 mx-auto my-2">
+                            <a href="{% url 'accounts:log_in' %}">Log in again</a>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 {% endblock %}

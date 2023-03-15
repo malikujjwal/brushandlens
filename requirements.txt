@@ -7,6 +7,7 @@ cryptography==39.0.2
 defusedxml==0.7.1
 Django==4.1.7
 django-allauth==0.52.0
+django-bootstrap4==22.3
 django-termsandconditions==2.0.12
 django-widget-tweaks==1.4.12
 idna==3.4

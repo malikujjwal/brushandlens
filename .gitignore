@@ -10,3 +10,10 @@ brushandlens/root/__pycache__/models.cpython-310.pyc
 brushandlens/root/__pycache__/urls.cpython-310.pyc
 brushandlens/root/__pycache__/views.cpython-310.pyc
 brushandlens/root/migrations/__pycache__/__init__.cpython-310.pyc
+brushandlens/accounts/__pycache__/__init__.cpython-310.pyc
+brushandlens/accounts/__pycache__/apps.cpython-310.pyc
+brushandlens/accounts/__pycache__/forms.cpython-310.pyc
+brushandlens/accounts/__pycache__/models.cpython-310.pyc
+brushandlens/accounts/__pycache__/urls.cpython-310.pyc
+brushandlens/accounts/migrations/__pycache__/__init__.cpython-310.pyc
+brushandlens/accounts/__pycache__/views.cpython-310.pyc

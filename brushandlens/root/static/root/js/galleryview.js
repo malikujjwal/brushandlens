@@ -21,14 +21,14 @@ function GalleryViewer(numRows, goatsPerRow) {
                     const goat = goats[row * goatsPerRow + col];
 
                     const card = $(`
-                        <div class="col-lg-4 col-md-6 gallery_item design">
+                        <div class="col-lg-4 col-md-6 gallery_item ${goat.theme}">
                         <div class="gallery_post">
-                            <div class="img"><img src="../static/root/gallery-assets/img/case_one/case_pr_one.jpg" alt></div>
+                            <div class="img"><img src="../static/root/images/${goat.image}" alt></div>
                             <div class="gallery_content">
-                                <a href="#">
-                                    <h3>Artboard Focus</h3>
+                                <a href="/artistworks?id=${goat.uid}">
+                                    <h3>${goat.name}</h3>
                                 </a>
-                                <a href="#" class="g_tag">Design</a>
+                                <a href="/artistworks?id=${goat.uid}" class="g_tag">${goat.theme}</a>
                             </div>
                         </div>
                     </div>`);

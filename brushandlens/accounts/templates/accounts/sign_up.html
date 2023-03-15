@@ -1,0 +1,30 @@
+{% extends 'root/base.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+    <div class="content-wrapper d-flex flex-column flex-grow-1">
+        <section>
+            <div class="py-5 d-flex">
+            </div>
+            <div class="container py-3 h-100 d-flex justify-content-center">
+                <div class="col-xl-8">
+                    <form class="form-outline mb-4 form-control form-control-lg" method="post">
+                        <div class="divider d-flex align-items-center my-1">
+                            <p class="text-center fw-bold mx-3 mb-0 text-muted">SIGN UP</p>
+                        </div>
+                        <div class="form-outline">
+                            {% csrf_token %}
+                            {% bootstrap_form form %}
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto my-2">
+                            <button class="btn btn-primary">Create</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

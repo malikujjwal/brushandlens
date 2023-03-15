@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
+from os.path import dirname
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'root.apps.RootConfig'
+    'root.apps.RootConfig',
+    'bootstrap4',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -120,5 +124,42 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+BASE_DIR = dirname(dirname(os.path.abspath(__file__)))
+# CONTENT_DIR = os.path.join(BASE_DIR, 'content')
+ENABLE_USER_ACTIVATION = False
+DISABLE_USERNAME = False
+LOGIN_VIA_EMAIL = False
+LOGIN_VIA_EMAIL_OR_USERNAME = True
+LOGIN_REDIRECT_URL = 'index'
+LOGIN_URL = 'accounts:log_in'
+USE_REMEMBER_ME = False
+
+RESTORE_PASSWORD_VIA_EMAIL_OR_USERNAME = True
+EMAIL_ACTIVATION_AFTER_CHANGING = True
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+
+USE_L10N = True
+
+# STATIC_ROOT = os.path.join(CONTENT_DIR, 'static')
+
+# MEDIA_ROOT = os.path.join(CONTENT_DIR, 'media')
+MEDIA_URL = '/media/'
+
+# STATICFILES_DIRS = [
+#     os.path.join(CONTENT_DIR, 'assets'),
+# ]
+
+# LOCALE_PATHS = [
+#     os.path.join(CONTENT_DIR, 'locale')
+# ]
+
+SIGN_UP_FIELDS = ['username', 'first_name', 'last_name', 'password1', 'password2']
+if DISABLE_USERNAME:
+    SIGN_UP_FIELDS = ['first_name', 'last_name', 'password1', 'password2']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

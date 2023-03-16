@@ -1,14 +1,17 @@
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth import login, authenticate, REDIRECT_FIELD_NAME
+from django.contrib.auth import login, logout, authenticate, REDIRECT_FIELD_NAME
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import (
     LogoutView as BaseLogoutView, PasswordChangeView as BasePasswordChangeView,
 )
 from django.shortcuts import redirect
+from django.urls import reverse
 from django.utils.crypto import get_random_string
 from django.utils.decorators import method_decorator
+from django.utils.html import format_html
 from django.utils.http import url_has_allowed_host_and_scheme as is_safe_url
+from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
@@ -17,7 +20,7 @@ from django.views.generic import View, FormView
 
 from .forms import (
     SignInViaUsernameForm, SignUpForm,
-    ChangeProfileForm, )
+    ChangeProfileForm, ChangePasswordForm, )
 
 
 class GuestOnlyView(View):
@@ -93,10 +96,13 @@ class SignUpView(GuestOnlyView, FormView):
 
         raw_password = form.cleaned_data['password1']
         user = authenticate(username=user.username, password=raw_password)
-        login(request, user)
-        messages.success(request, _('You are successfully signed up!'))
+        # login(request, user)
+        message = format_html('You are successfully signed up, click <a href="{}">here</a> to log in!',
+                              reverse('accounts:log_in'))
+        messages.success(self.request, message)
 
-        return redirect('index')
+        # return redirect('index')
+        return redirect('accounts:sign_up')
 
 
 class ChangeProfileView(LoginRequiredMixin, FormView):
@@ -123,6 +129,7 @@ class ChangeProfileView(LoginRequiredMixin, FormView):
 
 class ChangePasswordView(BasePasswordChangeView):
     template_name = 'accounts/profile/change_password.html'
+    form_class = ChangePasswordForm
 
     def form_valid(self, form):
         # Change the password
@@ -132,7 +139,6 @@ class ChangePasswordView(BasePasswordChangeView):
         login(self.request, user)
 
         messages.success(self.request, _('Your password was changed.'))
-
         return redirect('accounts:change_password')
 
 

@@ -240,8 +240,10 @@ html {
     background-color: #f1aa09 !important;
   }
   
-  .bg-primary-hover {
-    background-color: #c48904 !important;
+  .bg-primary-hover:hover {
+    /*background-color: #c48904 !important;*/
+      background-color: #0d6efd;
+      color: #fff;
   }
   
   .bg-secondary {

@@ -4,23 +4,35 @@
 {% load i18n %}
 
 {% block content %}
-    <div class="content-wrapper d-flex flex-column flex-grow-1">
+    <div class="content-wrapper d-flex flex-column flex-grow-1" style="background-color: hsl(0, 0%, 96%)">
+
         <section>
             <div class="py-5 d-flex">
             </div>
-            <div class="container d-flex justify-content-center">
-                <div class="col-xl-5">
-                    <form class="form-outline mb-4 py-3 form-control form-control-lg" method="post">
-                        <div class="divider d-flex align-items-center my-1">
-                            <p class="text-center fw-bold mx-3 mb-0 text-muted">LOGGED OUT</p>
+            <div class="container">
+                <div class="row gx-lg-5 align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                    </div>
+                    <div class="col-lg-5 my-0">
+                        <div class="card">
+                            <div class="card-body py-4 px-md-5 my-auto">
+                                <form method="post">
+                                    <div class="divider d-flex align-items-center p-3 my-1">
+                                        <p class="text-center fw-bold mx-3 mb-0 text-muted">LOGGED OUT</p>
+                                    </div>
+                                    <p>
+                                        Thanks for spending some quality time with the site today.
+                                    </p>
+                                    <div class="divider d-flex align-items-center my-1">
+                                        <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="{% url 'accounts:log_in' %}">Click here to log in again.</a>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <p>
-                            Thanks for spending some quality time with the site today.
-                        </p>
-                        <div class="d-grid gap-2 col-6 mx-auto my-2">
-                            <a href="{% url 'accounts:log_in' %}">Log in again</a>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>

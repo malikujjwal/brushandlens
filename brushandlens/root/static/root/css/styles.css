@@ -11706,3 +11706,13 @@ body {
   height: 1px;
   background: #eee;
 }
+
+.bg-primary-hover:hover {
+  /*background-color: #c48904 !important;*/
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.cart-group:hover * {
+    color: #64a19d;
+}

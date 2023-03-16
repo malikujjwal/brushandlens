@@ -4,25 +4,69 @@
 {% load i18n %}
 
 {% block content %}
-    <div class="content-wrapper d-flex flex-column flex-grow-1">
+    <div class="content-wrapper d-flex flex-column flex-grow-1" style="background-color: hsl(0, 0%, 96%)">
         <section>
-            <div class="py-5 d-flex">
-            </div>
-            <div class="container d-flex justify-content-center">
-                <div class="col-xl-5">
-                    <form class="form-outline mb-4 py-3 form-control form-control-lg" method="post">
-                        <div class="divider d-flex align-items-center my-1">
-                            <p class="text-center fw-bold mx-3 mb-0 text-muted">CHANGE PROFILE</p>
+            <div class="content-wrapper  px-4 py-5 px-md-5 text-center text-lg-start">
+                <div class="py-5 d-flex">
+                </div>
+                <div class="container">
+                    <div class="row gx-lg-5 align-items-center">
+                        <div class="col-lg-6 mb-5 mb-lg-0">
+                            <h1 class="my-5 display-3 fw-bold ls-tight">
+                                The best offer <br/>
+                                <span class="text-primary">for your business</span>
+                            </h1>
+                            <p style="color: hsl(217, 10%, 50.8%)">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+                                quibusdam tempora at cupiditate quis eum maiores libero
+                                veritatis? Dicta facilis sint aliquid ipsum atque?
+                            </p>
                         </div>
-                        <div class="form-outline mt-4 mb-4">
-                            {% csrf_token %}
-                            {% bootstrap_form form %}
-                        </div>
-                        <div class="d-grid gap-2 col-6 mx-auto my-2">
-                            <button class="btn btn-success">Change</button>
-                        </div>
-                    </form>
+                        <div class="col-lg-5 mb-5 mb-lg-0">
 
+                            <div class="card">
+                                <div class="card-body py-4 px-md-5">
+
+
+                                    <form method="post">
+                                        <div class="divider d-flex align-items-center p-3 my-1">
+                                            <p class="text-center fw-bold mx-3 mb-0 text-muted">CHANGE PROFILE</p>
+                                        </div>
+                                        <div class="form-outline">
+                                            {% csrf_token %}
+                                            {% bootstrap_form form %}
+                                        </div>
+                                        <div class="d-grid gap-2 col-10 mx-auto my-3">
+                                            <button class="btn btn-primary btn-sm">Change</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    {% if message.tags == 'success' %}
+                                        <div class="alert alert-success alert-dismissible fade show"
+                                             role="alert">
+                                            {{ message }}
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close">
+                                            </button>
+                                        </div>
+                                    {% endif %}
+                                    {% if message.tags == 'error' %}
+                                        <div class="alert alert-danger alert-dismissible fade show"
+                                             role="alert">
+                                            {{ message }}
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close">
+                                            </button>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

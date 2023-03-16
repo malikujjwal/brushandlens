@@ -3,6 +3,7 @@ from django.template import loader
 from django.http import JsonResponse
 
 def index(request):
+    context = {'active': 'Home'}
     return render(request, 'root/index.html')
 
 def about(request):
@@ -13,12 +14,6 @@ def preview(request):
     return render(request, 'root/preview.html')
 
 def feelinglucky(request):
-    urls = ["../static/root/images/bg-masthead.jpg", "../static/root/images/bg-masthead.jpg", "../static/root/images/bg-masthead.jpg"]
-    imgLabels = ["Image 1", "Image 2", "Image 3"]
-    imgDescription = ["Some representative placeholder content for the first slide.", 
-                      "Some representative placeholder content for the second slide.", 
-                      "Some representative placeholder content for the third slide."]
-
     context = {'active': 'Lucky',
                 'slider_info':[
                 {

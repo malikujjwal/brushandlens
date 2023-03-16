@@ -1,16 +1,20 @@
 from django.db import models
 from django.utils import timezone
 
-# Create your models here.
-# class ArtWork():
-#     title = models.CharField(max_length=256)
-#     theme = models.CharField(max_length=256)
-#     image_path = models.CharField(max_length=260)
-#     date_posted = models.DateTimeField(default=timezone.now)
-#     artist = models.ForeignKey('Artist', on_delete=models.CASCADE)
-#     likes = models.IntegerField(blank=True, null=True)
-#     price = models.IntegerField()
+from django.contrib.auth.models import User
 
-# class Artist():
-#     name = models.CharField(max_length=256)
-#     description = models.TextField()
+class Artist(models.Model):
+    name = models.CharField(max_length=256)
+    description = models.TextField()
+    type = models.TextField()
+
+class Images(models.Model):
+    title = models.CharField(max_length=256)
+    image_path = models.CharField(max_length=260)
+    price = models.IntegerField()
+    date_posted = models.DateTimeField(default=timezone.now)
+    artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
+
+class Likes(models.Model):
+    image_path = models.CharField(max_length=260)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)

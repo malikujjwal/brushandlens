@@ -4,6 +4,8 @@ from django.http import JsonResponse
 from .models import Artist
 from .models import Images
 
+import random
+
 def index(request):
     context = {'active': 'Home'}
     return render(request, 'root/index.html')
@@ -107,7 +109,8 @@ def get_artists(request):
     artists = Artist.objects.all()
     artist_data = []
     for artist in artists:
-        first_image = Images.objects.filter(artist=artist).first()
+        imges = Images.objects.filter(artist=artist)
+        first_image = imges.first()
         data = {
             'id': artist.id,
             'name': artist.name,
@@ -115,7 +118,9 @@ def get_artists(request):
             'type': artist.type,
             'image_path': first_image.image_path if first_image else None,
             'price': first_image.price if first_image else None,
-            'date_posted': first_image.date_posted if first_image else None
+            'date_posted': first_image.date_posted if first_image else None,
+            'posts' : imges.count(),
+            'likes' : imges.count() * random.randrange(44, 46)
         }
         artist_data.append(data)
     

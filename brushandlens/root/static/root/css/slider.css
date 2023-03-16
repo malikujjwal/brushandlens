@@ -53,6 +53,11 @@ body{
   text-align: left;
 }
 
+.slider-caption p {
+  color: #fff;
+  padding-left: 0;
+}
+
 .back-button{ 
   border: 0px;
   font-size: 0.85rem;

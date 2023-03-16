@@ -4,9 +4,16 @@ from django.http import JsonResponse
 from .models import Artist
 from .models import Images
 
+import random
+
 def index(request):
     context = {'active': 'Home'}
-    return render(request, 'root/index.html')
+    artist = Artist.objects.get(id=1)
+    image = Images.objects.filter(artist=artist).get(pk=12)
+    context = {'active' : 'Home',
+               'artist': artist,
+               'image' : image}
+    return render(request, 'root/index.html', context)
 
 def about(request):
     context = {'active': 'About'}
@@ -84,7 +91,7 @@ def preview(request):
         }
         image_list.append(image_dict)
         
-    context = {'active': 'NA',
+    context = {'active': 'Lucky',
                'slider_info': list(image_list)}
     
     return render(request, 'root/preview.html', context)
@@ -95,7 +102,10 @@ def gallery(request):
 
 def artistworks(request):
     art = Artist.objects.all()
-    imgs = Images.objects.filter(artist = art[int(request.GET.get('id')) - 1] )
+    imgs = Images.objects.filter(artist = art[int(request.GET.get('id')) - 1])
+    theme_choices = ["popularity", "price"]
+    for img in imgs:
+        img.theme = random.choice(theme_choices)
     context = {
                 'active': 'Artist',
                 'artists': art[int(request.GET.get('id')) - 1],
@@ -107,7 +117,8 @@ def get_artists(request):
     artists = Artist.objects.all()
     artist_data = []
     for artist in artists:
-        first_image = Images.objects.filter(artist=artist).first()
+        imges = Images.objects.filter(artist=artist)
+        first_image = imges.first()
         data = {
             'id': artist.id,
             'name': artist.name,
@@ -115,7 +126,9 @@ def get_artists(request):
             'type': artist.type,
             'image_path': first_image.image_path if first_image else None,
             'price': first_image.price if first_image else None,
-            'date_posted': first_image.date_posted if first_image else None
+            'date_posted': first_image.date_posted if first_image else None,
+            'posts' : imges.count(),
+            'likes' : imges.count() * random.randrange(44, 46)
         }
         artist_data.append(data)
     

@@ -30,7 +30,7 @@ function GalleryViewer(numRows, goatsPerRow) {
                                 <a href="/artistworks?id=${goat.id}">
                                     <h3>${goat.name}</h3>
                                 </a>
-                                <a href="/artistworks?id=${goat.id}" class="g_tag">${goat.theme}</a>
+                                <a href="/artistworks?id=${goat.id}" class="g_tag">Posts: ${goat.posts} | Likes: ${goat.likes}</a>
                             </div>
                         </div>
                     </div>`);

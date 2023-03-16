@@ -31,19 +31,19 @@
             <div id="filters" class="filters">
               <p>Sort By: </p>
               <a href="#" data-filter="*" class="active">Date</a>
-              <a href="#" data-filter=".web">Popularity</a>
-              <a href="#" data-filter=".design">Price</a>
+              <a href="#" data-filter=".popularity">Popularity</a>
+              <a href="#" data-filter=".price">Price</a>
             </div>
           </div>
         </div>
-        <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+        <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="0">
           {% for image in images %}
-            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+            <div class="item {{image.theme}} col-sm-6 col-md-4 col-lg-4 mb-4">
               
               <a href="/preview?img_id={{image.pk}}" class="item-wrap fancybox">
                 <div class="work-info">
                   <!-- <h3>Buy Now</h3> -->
-                  <span>Buy Now</span>
+                  <span>Buy Now ${{image.price}}</span>
                 </div>
                 <img class="img-fluid" src="../static/root{{image.image_path}}">
               </a>

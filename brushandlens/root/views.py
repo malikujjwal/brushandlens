@@ -97,7 +97,10 @@ def gallery(request):
 
 def artistworks(request):
     art = Artist.objects.all()
-    imgs = Images.objects.filter(artist = art[int(request.GET.get('id')) - 1] )
+    imgs = Images.objects.filter(artist = art[int(request.GET.get('id')) - 1])
+    theme_choices = ["popularity", "price"]
+    for img in imgs:
+        img.theme = random.choice(theme_choices)
     context = {
                 'active': 'Artist',
                 'artists': art[int(request.GET.get('id')) - 1],

@@ -84,7 +84,7 @@ def preview(request):
         }
         image_list.append(image_dict)
         
-    context = {'active': 'NA',
+    context = {'active': 'Lucky',
                'slider_info': list(image_list)}
     
     return render(request, 'root/preview.html', context)

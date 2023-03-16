@@ -1,0 +1,154 @@
+{% extends "root/base.html" %}
+
+{% block header %}
+{% load static %}
+<link href="{% static 'root/css/slider.css' %}" rel="stylesheet" />
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+{% endblock header %}
+
+{% block content %}
+    <div class="div-empty-height"></div>
+    <div class="container slide-container">
+        <div class="row justify-content-between">
+            <div class="col-lg-2 col-sm-2 back-button">
+            <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+              </svg><span>Back to Gallery</span></button>
+            </div>
+            <div class="col-lg-1 col-sm-1 align-self-end text-right">
+                <div class='large-font'>
+                    <ion-icon name="heart">
+                      <div class='red-bg'></div>
+                    </ion-icon>
+                    <a class="share-btn" href="#"><ion-icon name="share-social-outline" id="share">
+                    </ion-icon></a>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="carouselExampleCaptions" class="carousel slide col-lg-8" data-bs-interval="false">
+                <div class="carousel-inner" id="carousel-inner-div" data-context="{{ context_json  }}">
+                    {% for item in slider_info %}
+                        <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                            <img src="/static/root{{ item.image_src }}" class="d-block w-100 nav-img-item" alt="...">
+                            <div class="slider-caption d-none d-md-block">
+                                <h5>{{ item.image_label }}</h5>
+                                <p>{{ item.image_desc }}</p>
+                            </div>
+                            <input type="hidden" value="{{ item.image_pr }}">
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div id="caousel-form" class="col-lg-4 slider-border">
+                <form action='' class='form'>
+                    <div class='field'>
+                      <label class='label' for='select'>Material</label>
+                      <ul class='options'>
+                        <li class='option'>
+                          <input class='option-input' id='material-0' name='material' type='radio' value='0' checked="checked">
+                          <label class='material-label' for='material-0'>Professional Paper</label>
+                        </li>
+                        <li class='option'>
+                          <input class='option-input' id='material-1' name='material' type='radio' value='10'>
+                          <label class='material-label' for='material-1'>Framed</label>
+                        </li> 
+                      </ul>
+                    </div>
+                    <div class='field'>
+                        <label class='label'>Border</label>
+                        <ul class='options'>
+                          <li class='option'>
+                            <input class='option-input' id='frame-0' name='border' type='radio' value='0' checked="checked">
+                            <label class='option-label' for='frame-0'>Borderless</label>
+                          </li>
+                          <li class='option'>
+                            <input class='option-input' id='frame-1' name='border' type='radio' value='5'>
+                            <label class='option-label' for='frame-1'>Border</label>
+                          </li> 
+                        </ul>
+                      </div>
+                    <div class='field'>
+                        <label class='label'>Size (in.)</label>
+                        <ul class='options'>
+                          <li class='option'>
+                            <input class='option-input' id='option-0' name='size' type='radio' value='0' checked="checked">
+                            <label class='option-label' for='option-0'>8x10</label>
+                          </li>
+                          <li class='option'>
+                            <input class='option-input' id='option-1' name='size' type='radio' value='5'>
+                            <label class='option-label' for='option-1'>8x10</label>
+                          </li>
+                          <li class='option'>
+                            <input class='option-input' id='option-2' name='size' type='radio' value='8'>
+                            <label class='option-label' for='option-2'>8x10</label>
+                          </li>
+                          <li class='option'>
+                            <input class='option-input' id='option-3' name='size' type='radio' value='10'>
+                            <label class='option-label' for='option-3'>8x10</label>
+                          </li>
+                        </ul>
+                      </div>
+                    <p class='field'>
+                      <input class='button' type='submit' value='Add to Cart: USD {{ slider_info.0.image_pr }}' id="cartValue">
+                    </p>
+                </form>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                          Specifications
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Hand-made, solid wood frame</li>
+                                <li> UV and scratch-resistant acrylic cover</li>
+                                <li>Edge width of 1.125", depth of 0.75"</li>
+                                <li>2" polar white matting</li>
+                                <li>Sizing: +6.5" to the listed print size</li>
+                                <li>Ex: 12x18" framed print final size is 18.5x24.5"</li>
+                                <li>Arrive ready to hang</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Delivery and Returns
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Orders ship promptly after printing. All domestic orders are insured and trackable. International orders are insured and optionally trackable. No returns as all prints are custom made. An email containing tracking information will be sent once the order ships.
+
+                            Holiday adjusted material print times (business days)
+                            <ul>
+                                <li>Professional Paper: 2-4 days</li>
+                                <li>Fine Art Paper: 4-6 days</li>
+                                <li>Framed: 10-12 days</li>
+                                <li>Canvas: 6-8 days</li>
+                                <li>Metal: 4-6 days</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'root/js/slider.js' %}"></script>
+{% endblock content %}

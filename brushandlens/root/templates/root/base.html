@@ -35,7 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link {% if active == 'Gallery' %} active{% endif %}" href="{% url 'gallery' %}">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link {% if active == 'Lucky' %} active{% endif %}" href="{% url 'about' %}">Feeling Lucky!</a></li>
+                        <li class="nav-item"><a class="nav-link {% if active == 'Lucky' %} active{% endif %}" href="{% url 'feelinglucky' %}">Feeling Lucky!</a></li>
                         <li class="nav-item"><a class="nav-link {% if active == 'About' %}active{% endif %}" href="{% url 'about' %}">About</a></li> <!--remove this>-->
                         <li class="nav-item">
                             <div class="dropdown">
@@ -68,12 +68,7 @@
         {% endif %}
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <!-- <script src="{% static 'root/js/scripts.js' %}"></script> -->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- for contact form -->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>

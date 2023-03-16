@@ -1,5 +1,9 @@
 {% extends "root/base.html" %}
 
+{% block header %}
+
+{% endblock header %}
+
 {% block content %}
 <header class="masthead">
     <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
@@ -93,4 +97,7 @@
         </div>
     </div>
 </section>
+
+{% load static %}
+<script src="{% static 'root/js/scripts.js' %}"></script>
 {% endblock content %}

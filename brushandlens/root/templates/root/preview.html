@@ -14,7 +14,7 @@
             <div class="col-lg-2 col-sm-2 back-button">
             <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-              </svg>&nbsp;<span>Back to Gallery</span></button>
+              </svg><span>Back to Gallery</span></button>
             </div>
             <div class="col-lg-1 col-sm-1 align-self-end text-right">
                 <div class='large-font'>
@@ -31,7 +31,7 @@
                 <div class="carousel-inner" id="carousel-inner-div" data-context="{{ context_json  }}">
                     {% for item in slider_info %}
                         <div class="carousel-item{% if forloop.first %} active{% endif %}">
-                            <img src="{{ item.image_src }}" class="d-block w-100 nav-img-item" alt="...">
+                            <img src="/static/root{{ item.image_src }}" class="d-block w-100 nav-img-item" alt="...">
                             <div class="slider-caption d-none d-md-block">
                                 <h5>{{ item.image_label }}</h5>
                                 <p>{{ item.image_desc }}</p>

@@ -39,6 +39,14 @@
                         <li class="nav-item"><a class="nav-link {% if active == 'Gallery' %} active{% endif %}" href="{% url 'gallery' %}">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link {% if active == 'Lucky' %} active{% endif %}" href="{% url 'feelinglucky' %}">Explore!</a></li>
                         <li class="nav-item"><a class="nav-link {% if active == 'About' %}active{% endif %}" href="{% url 'about' %}">About</a></li> <!--remove this>-->
+                        {% if user.is_authenticated %}
+                            <li class="nav-item cart-group">
+                                <a href="{% url 'about' %}" class="shadow-none nav-link" style="font-size: 1rem;">
+                                    <i class="bi-cart-fill"></i>
+                                    <span>0</span>
+                                </a>
+                            </li>
+                        {% endif %}
                         <li class="nav-item" id="nav-item-account">
                             <div class="dropdown">
                                 <button class="shadow-none border-start-0 border-end-0 border-top-0 btn-white nav-item nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

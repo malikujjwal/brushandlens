@@ -8,7 +8,12 @@ import random
 
 def index(request):
     context = {'active': 'Home'}
-    return render(request, 'root/index.html')
+    artist = Artist.objects.get(id=1)
+    image = Images.objects.filter(artist=artist).get(pk=12)
+    context = {'active' : 'Home',
+               'artist': artist,
+               'image' : image}
+    return render(request, 'root/index.html', context)
 
 def about(request):
     context = {'active': 'About'}

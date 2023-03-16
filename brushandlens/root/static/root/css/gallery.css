@@ -3109,7 +3109,7 @@ header .portfolio_menu .burger_menu .dot_icon .dot {
 .gallery_filter li.active {
   font-weight: 600;
   color: #64a19d;
-  text-decoration: underline;
+  border-bottom: 3px solid #64a19d;
 }
 .gallery_filter li:hover {
   color: #64a19d;
@@ -3139,6 +3139,9 @@ header .portfolio_menu .burger_menu .dot_icon .dot {
 .gallery_post .gallery_text_info .gallery_content {
   background-color: white;
   box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.08);
+}
+.gallery_content{
+  border-bottom: 1px solid rgb(95, 95, 95);
 }
 .gallery_post .gallery_text_info .gallery_content:before {
   content: "";
@@ -3491,7 +3494,7 @@ header .portfolio_menu .burger_menu .dot_icon .dot {
   border-radius: 10px;
 }
 .gallery_inner_four .gallery_item .gallery_post .gallery_content {
-  padding: 26px 0px 0px;
+  padding: 15px 0px 5px;
 }
 .gallery_inner_four .gallery_item .gallery_post .gallery_content h3 {
   color: #101010;

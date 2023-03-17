@@ -95,4 +95,7 @@ $(document).ready(function() {
         alert("Item added to cart!");
     });
 
+    $('#back-to-gallery').click(function(){
+        window.location = '/gallery'
+    });
 });

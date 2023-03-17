@@ -11642,6 +11642,10 @@ body {
     border-width: 0.25rem;
     width: 30%;
   }
+  .projects-section .project-text p {
+    color: white !important;
+    display: block;
+  }
 }
 
 .signup-section {

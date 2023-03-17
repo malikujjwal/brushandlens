@@ -10,9 +10,11 @@ def index(request):
     context = {'active': 'Home'}
     artist = Artist.objects.get(id=1)
     image = Images.objects.filter(artist=artist).get(pk=12)
-    context = {'active' : 'Home',
+    context = {
+               'active' : 'Home',
                'artist': artist,
-               'image' : image}
+               'image' : image
+                }
     return render(request, 'root/index.html', context)
 
 def about(request):

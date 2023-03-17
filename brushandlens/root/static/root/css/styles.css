@@ -3485,6 +3485,7 @@ textarea.form-control-lg {
 .btn-outline-light {
   color: #f8f9fa;
   border-color: #f8f9fa;
+  border: 1px solid white !important;
 }
 .btn-outline-light:hover {
   color: #000;
@@ -11663,7 +11664,7 @@ body {
 }
 
 .contact-section {
-  padding-top: 5rem;
+  padding-top: 2rem;
 }
 .contact-section .card {
   border: 0;

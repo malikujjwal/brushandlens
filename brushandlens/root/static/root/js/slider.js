@@ -34,7 +34,7 @@ $(document).ready(function() {
     var sizePrice = 0;
 
     function updatePrice(updatedPrice){
-        $("#cartValue").val("Add to Cart: USD " + updatedPrice);
+        $("#cartValue").val("Add to Cart   USD " + updatedPrice);
     }
 
     $('#carouselExampleCaptions').on('slid.bs.carousel', function () {
@@ -89,6 +89,10 @@ $(document).ready(function() {
             $('#carousel-inner-div img').removeClass('carousel-border');
         }
         updatePrice(+sizePrice + +borderPrice + +basePrice + +materialPrice);
+    });
+
+    $('#cartValue').click(function() {
+        alert("Item added to cart!");
     });
 
 });

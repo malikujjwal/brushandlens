@@ -1,7 +1,17 @@
 {% extends "root/base.html" %}
 {% block content %}
-<div style="height: 1000px;" id="about"> 
-    <h1>About Page {{ active }}</h1>
-</div>
-
+<div class="container" style="width:100%">
+    <div class="row mt-5 py-5">
+      <div class="col-lg-6">
+        <img class="w-100" src="../static/root/images/45322.jpg" />
+      </div>
+      <div class="col-lg-6">
+        <div class="p-5 mt-4" style="border-left: 2px solid black;">
+            <h1 class="display-4">About Us</h1>
+            <p class="lead px-0">Welcome to Brush & Lens! 📸 Discover captivating images, explore talented photographers, and find the perfect photo to bring your project to life. Dive in and let your creativity soar</p>
+            <a href="{% url 'feelinglucky' %}" class="btn btn-outline-dark">Look Around</a>
+          </div>
+      </div>
+  </div>
+  </div>
 {% endblock content %}

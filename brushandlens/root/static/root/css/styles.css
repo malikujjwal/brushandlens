@@ -11642,8 +11642,11 @@ body {
     border-width: 0.25rem;
     width: 30%;
   }
+  .projects-section h4{
+    font-size: 1.4rem;
+  }
   .projects-section .project-text p {
-    color: white !important;
+    color: #a5a4a4 !important;
     display: block;
   }
 }

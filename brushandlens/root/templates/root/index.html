@@ -44,8 +44,43 @@
             <div class="col-xl-4 col-lg-5">
                 <div class="featured-text text-center text-lg-left">
                     <h4>Artist of the Week!</h4>
-                    <p class="text-black-50 mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <a class="btn btn-primary" href="/gallery">View ></a>
+                    <p class="text-black-50 mb-4">{{artist.name}}</p>
+                    <p class="text-black-50 mb-4">{{artist.description}}</p>
+                    <a class="btn btn-primary" href="/artistworks?id={{artist.pk}}">View ></a>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+            <div class="col-lg-6"><img class="img-fluid" src="../static/root/images/cat-7498364_1280.jpg" alt="..." /></div>
+            <div class="col-lg-6">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">Featured Artists</h4>
+                            <p class="mb-0 text-white-50 mb-4">{{artist.name}}</p>
+                            <p class="mb-0 text-white-50 mb-4">{{artist.description}}</p>
+                            <a class="btn btn-outline-light" href="/gallery">View ></a>
+                            <hr class="d-none d-lg-block mb-0 ms-0" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gx-0 justify-content-center">
+            <div class="col-lg-6"><img class="img-fluid" src="../static/root/images/bg-masthead.jpg" alt="..." /></div>
+            <div class="col-lg-6 order-lg-first">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-right">
+                            <h4 class="text-white">Featured Artists</h4>
+                            <p class="mb-0 text-white-50 mb-4">{{artist.name}}</p>
+                            <p class="mb-0 text-white-50 mb-4">{{artist.description}}</p>
+                            <a class="btn btn-outline-light" href="/gallery">View ></a>
+                            <hr class="d-none d-lg-block mb-0 me-0" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div> -->
